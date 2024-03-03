@@ -34,7 +34,7 @@ jobs:
           echo "MONGODB_URI=${{ secrets.MONGODB_URI }}" > "$GITHUB_WORKSPACE/.env"
           echo "DB_NAME=${{ secrets.DB_NAME }}" >> "$GITHUB_WORKSPACE/.env"
           echo "TEST_DB_NAME=${{ secrets.TEST_DB_NAME }}" >> "$GITHUB_WORKSPACE/.env"
-          ls -a
+          cat .env
           
       - name: Lint with flake8
         run: |
