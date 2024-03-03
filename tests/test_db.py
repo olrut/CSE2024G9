@@ -5,8 +5,8 @@ import json
 
 from dotenv import dotenv_values
 
-# project_root = os.path.abspath(os.path.join(os.path.dirname(__file__), '..'))
-# sys.path.insert(0, project_root)
+project_root = os.path.abspath(os.path.join(os.path.dirname(__file__), '..'))
+sys.path.insert(0, project_root)
 
 from models.order import Order
 from models.trade import Trade
@@ -18,7 +18,7 @@ class TestDatabase(unittest.TestCase):
     @classmethod
     def setUp(cls):
         # Change to the test database from the environment variables
-        os.environ['db'] = dotenv_values("../.env", ).get('TEST_DB_NAME')
+        os.environ['db'] = dotenv_values(".env", ).get('TEST_DB_NAME')
         cls.test_db = DbHandler()
 
     def test_record_trade(self):
