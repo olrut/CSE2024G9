@@ -31,9 +31,9 @@ jobs:
           python -m pip install --upgrade pip
           pip install flake8 pytest
           if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
-          echo "MONGODB_URI=${{ secrets.MONGODB_URI }}" > .env
-          echo "DB_NAME=${{ secrets.DB_NAME }}" >> .env
-          echo "TEST_DB_NAME=${{ secrets.TEST_DB_NAME }}" >> .env
+          echo "MONGODB_URI=${{ secrets.MONGODB_URI }}" > $GITHUB_WORKSPACE/.env
+          echo "DB_NAME=${{ secrets.DB_NAME }}" >> $GITHUB_WORKSPACE/.env
+          echo "TEST_DB_NAME=${{ secrets.TEST_DB_NAME }}" >> $GITHUB_WORKSPACE/.env
           ls
           
       - name: Lint with flake8
